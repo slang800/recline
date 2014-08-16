@@ -60,6 +60,20 @@ test('Field: type mapping', function () {
   });
 });
 
+test('Field: getFieldValue', function () {
+  var doc = new recline.Model.Record({
+    x: 12.3
+  });
+  var field = new recline.Model.Field({id: 'x'});
+  var out = doc.getFieldValue(field);
+  var exp = 12.3;
+  equal(out, exp);
+
+  // bad value 
+  var out = doc.getFieldValue();
+  equal(out, '');
+});
+
 test('Field: default renderers', function () {
   var doc = new recline.Model.Record({
     x: 12.3,
@@ -113,8 +127,10 @@ test('Field: custom deriver and renderer', function () {
   var field = new recline.Model.Field({id: 'computed', is_derived: true}, {
     deriver: deriver
   });
+  var out1 = doc.getFieldValueUnrendered(field);
   var out = doc.getFieldValue(field);
   var exp = 246;
+  equal(out1, exp);
   equal(out, exp);
 
   var field = new recline.Model.Field({id: 'x'}, {
@@ -161,6 +177,26 @@ test('Dataset getFieldsSummary', function () {
   });
 });
 
+test('fetch without and with explicit fields', function () {
+  var dataset = new recline.Model.Dataset({
+    backend: 'csv',
+    data: 'A,B\n1,2\n3,4'
+  });
+  dataset.fetch();
+  equal(dataset.fields.at(0).id, 'A');
+  equal(dataset.fields.at(0).get('type'), 'string');
+
+  var dataset = new recline.Model.Dataset({
+    fields: [{id: 'X', type: 'number'}, {id: 'Y'}],
+    backend: 'csv',
+    data: 'A,B\n1,2\n3,4'
+  });
+  dataset.fetch();
+  equal(dataset.fields.at(0).id, 'X');
+  equal(dataset.fields.at(0).get('type'), 'number');
+  equal(dataset.records.at(0).get('X'), 1);
+});
+
 test('_normalizeRecordsAndFields', function () {
   var data = [
     // fields but no records
@@ -178,6 +214,22 @@ test('_normalizeRecordsAndFields', function () {
           {id: '_noname_1'}
         ],
         records: null
+      },
+    },
+    // non-string fields
+    {
+      in_: {
+        fields: [ null, 1, 1, 3 ],
+        records: [ [1,2,3,4] ]
+      },
+      exp: {
+        fields: [
+          {id: '_noname_'},
+          {id: '1'},
+          {id: '11'},
+          {id: '3'}
+        ],
+        records: [ { '_noname_': 1, '1': 2, '11': 3, '3': 4 } ]
       },
     },
     // records array but no fields
@@ -247,7 +299,7 @@ test('_normalizeRecordsAndFields', function () {
         fields: [{id: 'col1'}, {id: 'col2'}],
         records: [
           {col1: 1, col2: 2},
-          {col1: 3, col2: 4},
+          {col1: 3, col2: 4}
         ]
       },
       exp: {
@@ -267,6 +319,7 @@ test('_normalizeRecordsAndFields', function () {
     out = dataset._normalizeRecordsAndFields(item.in_.records, item.in_.fields);
     deepEqual(out, item.exp);
   });
+
 });
 
 
@@ -304,6 +357,9 @@ test('Query.addFilter', function () {
   };
   deepEqual(query.get('filters')[0], exp);
 
+  query.addFilter({type: 'term', field: 'abc'});
+  deepEqual(query.get('filters')[0], exp);
+
   query.addFilter({type: 'geo_distance', field: 'xyz'});
   var exp = {
     distance: 10,
@@ -315,7 +371,7 @@ test('Query.addFilter', function () {
     field: 'xyz',
     type: 'geo_distance'
   };
-  deepEqual(exp, query.get('filters')[1]);
+  deepEqual(exp, query.get('filters')[2]);
 });
 
 })(this.jQuery);

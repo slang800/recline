@@ -1,6 +1,6 @@
 ---
 layout: container
-title: Tutorial - Backends - Loading data from different sources using Backends
+title: Loading data from different sources using Backends - Tutorial
 recline-deps: true
 root: ../
 ---
@@ -53,23 +53,18 @@ var dataset = recline.Model.Dataset({
 {% endhighlight %}
 
 <div class="alert alert-info">
-<strong>Backend identifiers</strong>
+<p><strong>Backend identifiers</strong>
 How do you know the backend identifier for a given Backend? It's just the name
 of the 'class' in recline.Backend module (but case-insensitive). E.g.
 recline.Backend.ElasticSearch can be identified as 'ElasticSearch' or
-'elasticsearch'.
+'elasticsearch'.</p>
+<p><strong>What Backends are available from Recline?</strong>
+{% include backend-list.html %}
+</p>
+<p><strong>Backend you'd like to see not available?</strong> It's easy to write your own &ndash; see the <a href="backends.html">Backend reference docs</a> for details of the required API.
+</p>
 </div>
 
-### Included Backends
-
-* [gdocs: Google Docs (Spreadsheet)](src/backend.gdocs.html)
-* [csv: CSV files](src/backend.csv.html)
-* [elasticsearch: ElasticSearch](src/backend.elasticsearch.html) - this also covers the DataHub as it has an ElasticSearch compatible API
-* [dataproxy: DataProxy (CSV and XLS on the Web)](src/backend.dataproxy.html)
-* [couchdb: CouchDB](src/backend.couchdb.html)
-
-Backend not on this list that you would like to see? It's very easy to write a
-new backend -- see below for more details.
 
 ## Preparing your app
 
@@ -81,8 +76,8 @@ much more limited if you are just using a Backend. Specifically:
 <script type="text/javascript" src="vendor/jquery/1.7.1/jquery.js"></script>
 <script type="text/javascript" src="vendor/underscore/1.1.6/underscore.js"></script>
 <script type="text/javascript" src="vendor/backbone/0.5.1/backbone.js"></script>
-<!-- include the backend code you need e.g. here for gdocs -->
-<script type="text/javascript" src="src/backend/gdocs.js"></script>
+<!-- include the backend code you need e.g. here for csv -->
+<script type="text/javascript" src="src/backend.csv.js"></script>
 
 <!-- Or you can just include all of recline. -->
 <script type="text/javascript" src="dist/recline.js"></script>
@@ -98,12 +93,14 @@ For Recline to be able to access a Google Spreadsheet it **must** have been
 
 <div class="alert alert-info">
 <strong>Want a real world example?</strong> This <a
-href="http://okfnlabs.org/opendatacensus">Open Data Census micro-app</a> loads
+href="http://dashboard.opengovernmentdata.org/census/">Open Data Census micro-app</a> loads
 data from Google Docs and then displays it on a specialist interface combining
 a bespoke chooser and a Kartograph (svg-only) map.
 </div>
 
 {% highlight javascript %}
+// include the Recline backend for Google Docs
+<script type="text/javascript" src="http://okfnlabs.org/recline.backend.gdocs/backend.gdocs.js"></script>
 {% include example-backends-gdocs.js %}
 {% endhighlight %}
 
@@ -111,33 +108,26 @@ a bespoke chooser and a Kartograph (svg-only) map.
 
 <div id="my-gdocs" class="doc-ex-rendered">&nbsp;</div>
 
+<script type="text/javascript" src="http://okfnlabs.org/recline.backend.gdocs/backend.gdocs.js">&nbsp;</script>
+
 <script type="text/javascript">
 {% include example-backends-gdocs.js %}
 </script>
 
 
-## Loading Data from ElasticSearch and the DataHub
+## Loading Data from ElasticSearch
 
-Recline supports ElasticSearch as a full read/write/query backend. It also means that Recline can load data from the [DataHub's](http://datahub.io/) data API as that is ElasticSearch compatible. Here's an example, using [this dataset about Rendition flights](http://datahub.io/dataset/rendition-on-record/ac5a28ea-eb52-4b0a-a399-5dcc1becf9d9') on the DataHub:
+Recline supports ElasticSearch as a full read/write/query backend via the
+[ElasticSearch.js library][esjs]. See the library for examples.
 
-{% highlight javascript %}
-{% include example-backends-elasticsearch.js %}
-{% endhighlight %}
-
-### Result
-
-<div id="my-elasticsearch" class="doc-ex-rendered">&nbsp;</div>
-
-<script type="text/javascript">
-{% include example-backends-elasticsearch.js %}
-</script>
+[esjs]: https://github.com/okfn/elasticsearch.js
 
 
 ## Loading data from CSV files
 
 For loading data from CSV files there are 3 cases:
 
-1. CSV is online but on same domain -- we can then load using AJAX (as no problems with same origin policy)
+1. CSV is online but on same domain or supporting CORS (S3 and Google Storage support CORS!) -- we can then load using AJAX (as no problems with same origin policy)
 2. CSV is on local disk -- if your browser supports HTML5 File API we can load the CSV file off disk
 3. CSV is online but not on same domain -- use DataProxy (see below)
 
@@ -210,10 +200,4 @@ You can customize the length of this timeout by setting the following constant:
 // Customize the timeout (in milliseconds) - default is 5000
 recline.Backend.DataProxy.timeout = 10000;
 {% endhighlight %}
-
-
-## Writing your own backend
-
-Writing your own backend is easy to do. Details of the required API are in the
-[Backend documentation](backends.html).
 

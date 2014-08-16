@@ -28,16 +28,26 @@ def docs():
     os.system('cd /tmp/recline-docs && %s %s && mv docs/* %s' % (docco_executable,files, dest))
     print("** Docs built ok")
 
+def minify():
+    cmd = 'uglifyjs -o %s %s' % ('dist/recline.min.js', 'dist/recline.js')
+    os.system(cmd)
+
+    cmd = 'uglifyjs -o %s %s' % ('dist/recline.dataset.min.js', 'dist/recline.dataset.js')
+    os.system(cmd)
+
 if __name__ == '__main__':
     if not len(sys.argv) > 1:
-        print 'make cat | docs | all'
+        print 'make cat | docs | minify | all'
         sys.exit(1)
     action = sys.argv[1]
     if action == 'cat':
         cat()
     elif action == 'docs':
         docs()
+    elif action == 'minify':
+        minify()
     elif action == 'all':
         cat()
         docs()
+        minify()
 
