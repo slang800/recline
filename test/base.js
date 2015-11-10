@@ -34,4 +34,3 @@ function assertNotPresent(selector, el) {
   var found = el ? $(el).find(selector) : $(selector);
   equal(found.length, 0);
 }
-

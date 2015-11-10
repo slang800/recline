@@ -72,7 +72,7 @@ test('percentages in graph view', function () {
   $.each(graphData, function(i, p){
     var percentage = p[1];
     equal($.isNumeric(percentage), true);
-  }); 
+  });
   view.remove();
 });
 
@@ -82,7 +82,7 @@ test('FlotControls basics', function () {
     model: dataset,
     state: {
       graphType: 'bars',
-      series: [] 
+      series: []
     }
   });
   $('.fixtures').append(view.el);
@@ -91,4 +91,3 @@ test('FlotControls basics', function () {
   assertPresent('.editor', view.el);
   view.remove();
 });
-

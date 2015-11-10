@@ -121,7 +121,7 @@ my.Timeline = Backbone.View.extend({
     this.model.records.each(function(record) {
       var newEntry = self.convertRecord(record, self.fields);
       if (newEntry) {
-        out.timeline.date.push(newEntry); 
+        out.timeline.date.push(newEntry);
       }
     });
     // if no entries create a placeholder entry to prevent Timeline crashing with error

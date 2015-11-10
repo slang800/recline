@@ -7,7 +7,7 @@ this.recline.View = this.recline.View || {};
   "use strict";
 
 my.Pager = Backbone.View.extend({
-  className: 'recline-pager', 
+  className: 'recline-pager',
   template: ' \
     <div class="pagination"> \
       <ul class="pagination"> \
@@ -31,8 +31,8 @@ my.Pager = Backbone.View.extend({
   onFormSubmit: function(e) {
     e.preventDefault();
     // filter is 0-based; form is 1-based
-    var formFrom = parseInt(this.$el.find('input[name="from"]').val())-1; 
-    var formTo = parseInt(this.$el.find('input[name="to"]').val())-1; 
+    var formFrom = parseInt(this.$el.find('input[name="from"]').val())-1;
+    var formTo = parseInt(this.$el.find('input[name="to"]').val())-1;
     var maxRecord = this.model.recordCount-1;
     if (this.model.queryState.get('from') != formFrom) { // changed from; update from
       this.model.queryState.set({from: Math.min(maxRecord, Math.max(formFrom, 0))});

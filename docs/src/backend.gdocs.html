@@ -29,7 +29,7 @@ var dataset = new recline.Model.Dataset({
 <li>fields: array of Field objects</li>
 <li>records: array of objects for each row</li>
 </ul>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">my</span><span class="p">.</span><span class="nx">fetch</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">dataset</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">dfd</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span> 
+    <span class="kd">var</span> <span class="nx">dfd</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span>
     <span class="kd">var</span> <span class="nx">urls</span> <span class="o">=</span> <span class="nx">my</span><span class="p">.</span><span class="nx">getGDocsAPIUrls</span><span class="p">(</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>TODO cover it with tests
 get the spreadsheet title</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
       <span class="kd">var</span> <span class="nx">titleDfd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Deferred</span><span class="p">();</span>
@@ -112,7 +112,7 @@ if labelled as % and value contains %, convert</p>             </td>            
     <span class="kd">var</span> <span class="nx">key</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">worksheet</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">urls</span><span class="p">;</span>
-    
+
     <span class="k">if</span><span class="p">(</span><span class="o">!!</span><span class="nx">matches</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">key</span> <span class="o">=</span> <span class="nx">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span></pre></div>             </td>           </tr>                               <tr id="section-13">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-13">&#182;</a>               </div>               <p>the gid in url is 0-based and feed url is 1-based</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="nx">worksheet</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">matches</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">worksheet</span><span class="p">))</span> <span class="p">{</span>
@@ -127,11 +127,11 @@ if labelled as % and value contains %, convert</p>             </td>            
         <span class="nx">urls</span> <span class="o">=</span> <span class="p">{</span>
           <span class="nx">worksheet</span>  <span class="o">:</span> <span class="s1">&#39;https://spreadsheets.google.com/feeds/list/&#39;</span><span class="o">+</span> <span class="nx">key</span> <span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span> <span class="nx">worksheet</span> <span class="o">+</span><span class="s1">&#39;/public/values?alt=json&#39;</span><span class="p">,</span>
           <span class="nx">spreadsheet</span><span class="o">:</span> <span class="s1">&#39;https://spreadsheets.google.com/feeds/worksheets/&#39;</span><span class="o">+</span> <span class="nx">key</span> <span class="o">+</span><span class="s1">&#39;/public/basic?alt=json&#39;</span>
-        <span class="p">}</span>            
+        <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="nx">urls</span><span class="p">;</span>
   <span class="p">};</span>
 <span class="p">}(</span><span class="k">this</span><span class="p">.</span><span class="nx">recline</span><span class="p">.</span><span class="nx">Backend</span><span class="p">.</span><span class="nx">GDocs</span><span class="p">));</span>
 
-</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html>

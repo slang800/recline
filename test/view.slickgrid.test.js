@@ -191,8 +191,8 @@ test('delete-row-with-row-reorder-activated' , function(){
 test('add-row' , function(){
 //To test adding row on slickgrid , we add some menu GridControl
 //I am based on the FlotControl in flot wiewer , to add a similary
-//to the sclickgrid , The GridControl add a bouton menu 
-//one the .side-bar place , which will allow to add a row to 
+//to the sclickgrid , The GridControl add a bouton menu
+//one the .side-bar place , which will allow to add a row to
 //the grid on-click
 
 var dataset = Fixture.getDataset();
@@ -215,7 +215,7 @@ assertPresent('.recline-row-add', view.elSidebar);
 //view.render()
 old_length = dataset.records.length
 dataset.records.on('add',function(record){
-  equal(dataset.records.length ,old_length + 1 ) 
+  equal(dataset.records.length ,old_length + 1 )
 });
 
 view.elSidebar.find('.recline-row-add').click();

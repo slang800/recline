@@ -1,18 +1,18 @@
 /*
-Theme Name:         Recline   
+Theme Name:         Recline
 Description:        Layout and styling for reclinejs.com
 Author:             Sam Smith
 Author URI:         http://www.mintcanary.com/
 */
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: General Styles
 :: Layout
-:: 
-:: 
-:: 
+::
+::
+::
 */
 
 /* ---------------------------------------------------
@@ -121,7 +121,7 @@ a:hover {
   margin-right: 1px;
 }
 
-a.btn, 
+a.btn,
 button.btn {
   white-space: normal !important;
 }

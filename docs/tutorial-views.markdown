@@ -58,7 +58,7 @@ In this data we have 6 documents / rows. Each document is a javascript object
 containing keys and values (note that all values here are 'simple' but there is
 no reason you cannot have objects as values allowing you to nest data.
 
-We can now create a recline Dataset object (and memory backend) from this raw data: 
+We can now create a recline Dataset object (and memory backend) from this raw data:
 
 {% highlight javascript %}
 var dataset = new recline.Model.Dataset({

@@ -111,10 +111,10 @@ On success must return a 'QueryResult' object which has the following structure:
   hits: [
     {
       // JS object that can be used to initialize a Record object
-    } 
+    }
   ],
 
-  // (optional) 
+  // (optional)
   facets: {
     // facet results (as per <http://www.elasticsearch.org/guide/reference/api/search/facets/>)
   }

@@ -17,4 +17,3 @@ $el.append(
       JSON.stringify(json, null, 2)
     )
 );
-

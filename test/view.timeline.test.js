@@ -82,4 +82,3 @@ test('_parseDate', function () {
   var out = view._parseDate('20/03/1914');
   equal(out, '03/20/1914');
 });
-

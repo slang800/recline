@@ -10,7 +10,7 @@
 <body>
   <div id="container">
     <div id="background"></div>
-    
+
       <ul id="jump_to">
         <li>
           <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
@@ -18,116 +18,116 @@
           <div id="jump_wrapper">
           <div id="jump_page_wrapper">
             <div id="jump_page">
-              
-                
+
+
                 <a class="source" href="backend.dataproxy.html">
                   backend.dataproxy.js
                 </a>
-              
-                
+
+
                 <a class="source" href="backend.memory.html">
                   backend.memory.js
                 </a>
-              
-                
+
+
                 <a class="source" href="ecma-fixes.html">
                   ecma-fixes.js
                 </a>
-              
-                
+
+
                 <a class="source" href="model.html">
                   model.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.flot.html">
                   view.flot.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.graph.html">
                   view.graph.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.grid.html">
                   view.grid.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.map.html">
                   view.map.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.multiview.html">
                   view.multiview.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.slickgrid.html">
                   view.slickgrid.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.timeline.html">
                   view.timeline.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.facetviewer.html">
                   widget.facetviewer.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.fields.html">
                   widget.fields.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.filtereditor.html">
                   widget.filtereditor.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.pager.html">
                   widget.pager.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.queryeditor.html">
                   widget.queryeditor.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.valuefilter.html">
                   widget.valuefilter.js
                 </a>
-              
+
             </div>
           </div>
         </li>
       </ul>
-    
+
     <ul class="sections">
-        
+
           <li id="title">
               <div class="annotation">
                   <h1>view.map.js</h1>
               </div>
           </li>
-        
-        
-        
+
+
+
         <li id="section-1">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+
             </div>
-            
+
             <div class="content"><div class='highlight'><pre><span class="hljs-comment">/*jshint multistr:true */</span>
 
 <span class="hljs-keyword">this</span>.recline = <span class="hljs-keyword">this</span>.recline || {};
@@ -135,13 +135,13 @@
 
 (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($, my)</span> </span>{
 <span class="hljs-pi">  "use strict"</span>;</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-2">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
@@ -178,20 +178,20 @@ have the following (optional) configuration options:</p>
 </ul>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>my.Map = Backbone.View.extend({
   template: <span class="hljs-string">' \
     &lt;div class="recline-map"&gt; \
       &lt;div class="panel map"&gt;&lt;/div&gt; \
     &lt;/div&gt; \
 '</span>,</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-3">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
@@ -199,7 +199,7 @@ have the following (optional) configuration options:</p>
 If not found, the user will need to define the fields via the editor.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  latitudeFieldNames: [<span class="hljs-string">'lat'</span>,<span class="hljs-string">'latitude'</span>],
   longitudeFieldNames: [<span class="hljs-string">'lon'</span>,<span class="hljs-string">'longitude'</span>],
   geometryFieldNames: [<span class="hljs-string">'geojson'</span>, <span class="hljs-string">'geom'</span>,<span class="hljs-string">'the_geom'</span>,<span class="hljs-string">'geometry'</span>,<span class="hljs-string">'spatial'</span>,<span class="hljs-string">'location'</span>, <span class="hljs-string">'geo'</span>, <span class="hljs-string">'lonlat'</span>],
@@ -208,20 +208,20 @@ If not found, the user will need to define the fields via the editor.</p>
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">this</span>.visible = <span class="hljs-keyword">this</span>.$el.is(<span class="hljs-string">':visible'</span>);
     <span class="hljs-keyword">this</span>.mapReady = <span class="hljs-literal">false</span>;</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-4">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>this will be the Leaflet L.Map object (setup below)</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.map = <span class="hljs-literal">null</span>;
 
     <span class="hljs-keyword">var</span> stateData = _.extend({
@@ -237,57 +237,57 @@ If not found, the user will need to define the fields via the editor.</p>
 
     <span class="hljs-keyword">this</span>._clusterOptions = {
       zoomToBoundsOnClick: <span class="hljs-literal">true</span>,</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-5">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>disableClusteringAtZoom: 10,</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      maxClusterRadius: <span class="hljs-number">80</span>,
       singleMarkerMode: <span class="hljs-literal">false</span>,
       skipDuplicateAddTesting: <span class="hljs-literal">true</span>,
       animateAddingMarkers: <span class="hljs-literal">false</span>
     };</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-6">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>Listen to changes in the fields</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model.fields, <span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
       self._setupGeometryField();
       self.render();
     });</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-7">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>Listen to changes in the records</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model.records, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(doc)</span></span>{self.redraw(<span class="hljs-string">'add'</span>,doc);});
     <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model.records, <span class="hljs-string">'change'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(doc)</span></span>{
         self.redraw(<span class="hljs-string">'remove'</span>,doc);
@@ -309,13 +309,13 @@ If not found, the user will need to define the fields via the editor.</p>
     });
     <span class="hljs-keyword">this</span>.elSidebar = <span class="hljs-keyword">this</span>.menu.$el;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-8">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
@@ -324,13 +324,13 @@ If not found, the user will need to define the fields via the editor.</p>
 behaviour</p>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-9">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
@@ -343,7 +343,7 @@ view.infobox = <span class="hljs-function"><span class="hljs-keyword">function</
 }
 </code></pre>
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  infobox: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(record)</span> </span>{
     <span class="hljs-keyword">var</span> html = <span class="hljs-string">''</span>;
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> record.attributes){
@@ -353,13 +353,13 @@ view.infobox = <span class="hljs-function"><span class="hljs-keyword">function</
     }
     <span class="hljs-keyword">return</span> html;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-10">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
@@ -371,15 +371,15 @@ See also <a href="http://leaflet.cloudmade.com/examples/geojson.html">http://lea
 </code></pre><p>See defaults for examples</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  geoJsonLayerOptions: {</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-11">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
@@ -391,79 +391,79 @@ during feature generation)</p>
 instance (which allows e.g. this.markers to work in this default case)</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    pointToLayer: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(feature, latlng)</span> </span>{
       <span class="hljs-keyword">var</span> marker = <span class="hljs-keyword">new</span> L.Marker(latlng);
       marker.bindPopup(feature.properties.popupContent);</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-12">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               <p>this is for cluster case</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">this</span>.markers.addLayer(marker);
       <span class="hljs-keyword">return</span> marker;
     },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-13">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <p>onEachFeature default which adds popup in</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    onEachFeature: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(feature, layer)</span> </span>{
       <span class="hljs-keyword">if</span> (feature.properties &amp;&amp; feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent);
       }
     }
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-14">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <h2 id="end-customization-section">END: Customization section</h2>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-15">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
-              
+
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-16">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
@@ -471,7 +471,7 @@ instance (which allows e.g. this.markers to work in this default case)</p>
 <p>Also sets up the editor fields and the map if necessary.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  render: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">var</span> htmls = Mustache.render(<span class="hljs-keyword">this</span>.template, <span class="hljs-keyword">this</span>.model.toTemplateJSON());
@@ -480,13 +480,13 @@ instance (which allows e.g. this.markers to work in this default case)</p>
     <span class="hljs-keyword">this</span>.redraw();
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-17">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
@@ -500,24 +500,24 @@ instance (which allows e.g. this.markers to work in this default case)</p>
 </ul>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  redraw: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(action, doc)</span></span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     action = action || <span class="hljs-string">'refresh'</span>;</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-18">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
               <p>try to set things up if not already</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (!self._geomReady()){
       self._setupGeometryField();
     }
@@ -526,20 +526,20 @@ instance (which allows e.g. this.markers to work in this default case)</p>
     }
 
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._geomReady() &amp;&amp; <span class="hljs-keyword">this</span>.mapReady){</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-19">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
               <p>removing ad re-adding the layer enables faster bulk loading</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">this</span>.map.removeLayer(<span class="hljs-keyword">this</span>.features);
       <span class="hljs-keyword">this</span>.map.removeLayer(<span class="hljs-keyword">this</span>.markers);
 
@@ -548,20 +548,20 @@ instance (which allows e.g. this.markers to work in this default case)</p>
 
       <span class="hljs-keyword">if</span> (action == <span class="hljs-string">'refresh'</span> || action == <span class="hljs-string">'reset'</span>) {
         <span class="hljs-keyword">this</span>.features.clearLayers();</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-20">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
               <p>recreate cluster group because of issues with clearLayer</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">this</span>.map.removeLayer(<span class="hljs-keyword">this</span>.markers);
         <span class="hljs-keyword">this</span>.markers = <span class="hljs-keyword">new</span> L.MarkerClusterGroup(<span class="hljs-keyword">this</span>._clusterOptions);
         <span class="hljs-keyword">this</span>._add(<span class="hljs-keyword">this</span>.model.records.models);
@@ -570,13 +570,13 @@ instance (which allows e.g. this.markers to work in this default case)</p>
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (action == <span class="hljs-string">'remove'</span> &amp;&amp; doc){
         <span class="hljs-keyword">this</span>._remove(doc);
       }</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-21">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
@@ -585,7 +585,7 @@ if not: errors when using e.g. circle markers like
 “Cannot call method ‘project’ of undefined”</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'cluster'</span>)) {
         <span class="hljs-keyword">this</span>.map.addLayer(<span class="hljs-keyword">this</span>.markers);
       } <span class="hljs-keyword">else</span> {
@@ -603,13 +603,13 @@ if not: errors when using e.g. circle markers like
   },
 
   show: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-22">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-22">&#182;</a>
               </div>
@@ -617,7 +617,7 @@ if not: errors when using e.g. circle markers like
 to display properly</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.map){
       <span class="hljs-keyword">this</span>.map.invalidateSize();
       <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._zoomPending &amp;&amp; <span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'autoZoom'</span>)) {
@@ -635,13 +635,13 @@ to display properly</p>
   _geomReady: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'geomField'</span>) || (<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'latField'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'lonField'</span>)));
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-23">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-23">&#182;</a>
               </div>
@@ -652,7 +652,7 @@ stopped and an error notification shown.</p>
 <p>Each feature will have a popup associated with all the record fields.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _add: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(docs)</span></span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
 
@@ -664,31 +664,31 @@ stopped and an error notification shown.</p>
       count += <span class="hljs-number">1</span>;
       <span class="hljs-keyword">var</span> feature = self._getGeometryFromRecord(doc);
       <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> feature === <span class="hljs-string">'undefined'</span> || feature === <span class="hljs-literal">null</span>){</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-24">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-24">&#182;</a>
               </div>
               <p>Empty field</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (feature <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">Object</span>){
         feature.properties = {
           popupContent: self.infobox(doc),</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-25">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-25">&#182;</a>
               </div>
@@ -696,7 +696,7 @@ stopped and an error notification shown.</p>
 link this Leaflet layer to a Recline doc</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>          cid: doc.cid
         };
 
@@ -719,20 +719,20 @@ link this Leaflet layer to a Recline doc</p>
       <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     });
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-26">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-26">&#182;</a>
               </div>
               <p>Private: Remove one or n features from the map</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _remove: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(docs)</span></span>{
 
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
@@ -748,13 +748,13 @@ link this Leaflet layer to a Recline doc</p>
     });
 
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-27">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
@@ -762,7 +762,7 @@ link this Leaflet layer to a Recline doc</p>
 <p>north and east are positive, south and west are negative</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _parseCoordinateString: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(coord)</span></span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span>(coord) != <span class="hljs-string">'string'</span>) {
       <span class="hljs-keyword">return</span>(<span class="hljs-built_in">parseFloat</span>(coord));
@@ -783,38 +783,38 @@ link this Leaflet layer to a Recline doc</p>
     }
     <span class="hljs-keyword">return</span>(deg);
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-28">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
               <p>Private: Return a GeoJSON geomtry extracted from the record fields</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _getGeometryFromRecord: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(doc)</span></span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'geomField'</span>)){
       <span class="hljs-keyword">var</span> value = doc.get(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'geomField'</span>));
       <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span>(value) === <span class="hljs-string">'string'</span>){</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-29">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
               <p>We <em>may</em> have a GeoJSON string representation</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">try</span> {
           value = $.parseJSON(value);
         } <span class="hljs-keyword">catch</span>(e) {}
@@ -834,74 +834,74 @@ link this Leaflet layer to a Recline doc</p>
           <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
         }
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &amp;&amp; _.isArray(value)) {</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-30">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
               <p>[ lon, lat ]</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> {
           <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
           <span class="hljs-string">"coordinates"</span>: [value[<span class="hljs-number">0</span>], value[<span class="hljs-number">1</span>]]
         };
       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value &amp;&amp; value.lat) {</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-31">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
               <p>of form { lat: …, lon: …}</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>        <span class="hljs-keyword">return</span> {
           <span class="hljs-string">"type"</span>: <span class="hljs-string">"Point"</span>,
           <span class="hljs-string">"coordinates"</span>: [value.lon || value.lng, value.lat]
         };
       }</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-32">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
               <p>We o/w assume that contents of the field are a valid GeoJSON object</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">return</span> value;
     } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'lonField'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'latField'</span>)){</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-33">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <p>We’ll create a GeoJSON like point object from the two lat/lon fields</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">var</span> lon = doc.get(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'lonField'</span>));
       <span class="hljs-keyword">var</span> lat = doc.get(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'latField'</span>));
       lon = <span class="hljs-keyword">this</span>._parseCoordinateString(lon);
@@ -916,13 +916,13 @@ link this Leaflet layer to a Recline doc</p>
     }
     <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-34">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
@@ -931,22 +931,22 @@ two fields with lat/lon values.</p>
 <p>If not found, the user can define them via the UI form.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _setupGeometryField: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-35">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
               <p>should not overwrite if we have already set this (e.g. explicitly via state)</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>._geomReady()) {
       <span class="hljs-keyword">this</span>.state.set({
         geomField: <span class="hljs-keyword">this</span>._checkField(<span class="hljs-keyword">this</span>.geometryFieldNames),
@@ -956,13 +956,13 @@ two fields with lat/lon values.</p>
       <span class="hljs-keyword">this</span>.menu.state.set(<span class="hljs-keyword">this</span>.state.toJSON());
     }
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-36">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-36">&#182;</a>
               </div>
@@ -970,7 +970,7 @@ two fields with lat/lon values.</p>
 list of names.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _checkField: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fieldNames)</span></span>{
     <span class="hljs-keyword">var</span> field;
     <span class="hljs-keyword">var</span> modelFieldNames = <span class="hljs-keyword">this</span>.model.fields.pluck(<span class="hljs-string">'id'</span>);
@@ -982,13 +982,13 @@ list of names.</p>
     }
     <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-37">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-37">&#182;</a>
               </div>
@@ -996,7 +996,7 @@ list of names.</p>
 extent if none.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _zoomToFeatures: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
     <span class="hljs-keyword">var</span> bounds = <span class="hljs-keyword">this</span>.features.getBounds();
     <span class="hljs-keyword">if</span> (bounds &amp;&amp; bounds.getNorthEast() &amp;&amp; bounds.getSouthWest()){
@@ -1005,13 +1005,13 @@ extent if none.</p>
       <span class="hljs-keyword">this</span>.map.setView([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>], <span class="hljs-number">2</span>);
     }
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-38">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-38">&#182;</a>
               </div>
@@ -1020,7 +1020,7 @@ extent if none.</p>
 on <a href="http://openstreetmap.org">OpenStreetMap</a>.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _setupMap: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">this</span>.map = <span class="hljs-keyword">new</span> L.Map(<span class="hljs-keyword">this</span>.$map.get(<span class="hljs-number">0</span>));
@@ -1031,20 +1031,20 @@ on <a href="http://openstreetmap.org">OpenStreetMap</a>.</p>
     <span class="hljs-keyword">this</span>.map.addLayer(bg);
 
     <span class="hljs-keyword">this</span>.markers = <span class="hljs-keyword">new</span> L.MarkerClusterGroup(<span class="hljs-keyword">this</span>._clusterOptions);</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-39">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-39">&#182;</a>
               </div>
               <p>rebind this (as needed in e.g. default case above)</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.geoJsonLayerOptions.pointToLayer =  _.bind(
         <span class="hljs-keyword">this</span>.geoJsonLayerOptions.pointToLayer,
         <span class="hljs-keyword">this</span>);
@@ -1054,20 +1054,20 @@ on <a href="http://openstreetmap.org">OpenStreetMap</a>.</p>
 
     <span class="hljs-keyword">this</span>.mapReady = <span class="hljs-literal">true</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-40">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-40">&#182;</a>
               </div>
               <p>Private: Helper function to select an option from a select list</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _selectOption: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id,value)</span></span>{
     <span class="hljs-keyword">var</span> options = $(<span class="hljs-string">'.'</span> + id + <span class="hljs-string">' &gt; select &gt; option'</span>);
     <span class="hljs-keyword">if</span> (options){
@@ -1141,20 +1141,20 @@ my.MapMenu = Backbone.View.extend({
       &lt;input type="hidden" class="editor-id" value="map-1" /&gt; \
     &lt;/form&gt; \
   '</span>,</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-41">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-41">&#182;</a>
               </div>
               <p>Define here events for UI elements</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  events: {
     <span class="hljs-string">'click .editor-update-map'</span>: <span class="hljs-string">'onEditorSubmit'</span>,
     <span class="hljs-string">'change .editor-field-type'</span>: <span class="hljs-string">'onFieldTypeChange'</span>,
@@ -1170,13 +1170,13 @@ my.MapMenu = Backbone.View.extend({
     <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.state, <span class="hljs-string">'change'</span>, <span class="hljs-keyword">this</span>.render);
     <span class="hljs-keyword">this</span>.render();
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-42">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-42">&#182;</a>
               </div>
@@ -1184,7 +1184,7 @@ my.MapMenu = Backbone.View.extend({
 <p>Also sets up the editor fields and the map if necessary.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  render: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">var</span> htmls = Mustache.render(<span class="hljs-keyword">this</span>.template, <span class="hljs-keyword">this</span>.model.toTemplateJSON());
@@ -1216,26 +1216,26 @@ my.MapMenu = Backbone.View.extend({
   _geomReady: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'geomField'</span>) || (<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'latField'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'lonField'</span>)));
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-43">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-43">&#182;</a>
               </div>
               <h2 id="ui-event-handlers">UI Event handlers</h2>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-44">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-44">&#182;</a>
               </div>
@@ -1244,7 +1244,7 @@ my.MapMenu = Backbone.View.extend({
 location information.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  onEditorSubmit: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
     e.preventDefault();
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'#editor-field-type-geom'</span>).attr(<span class="hljs-string">'checked'</span>)){
@@ -1262,13 +1262,13 @@ location information.</p>
     }
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-45">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-45">&#182;</a>
               </div>
@@ -1276,7 +1276,7 @@ location information.</p>
 type selected.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  onFieldTypeChange: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
     <span class="hljs-keyword">if</span> (e.target.value == <span class="hljs-string">'geom'</span>){
         <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'.editor-field-type-geom'</span>).show();
@@ -1294,20 +1294,20 @@ type selected.</p>
   onClusteringChange: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span></span>{
     <span class="hljs-keyword">this</span>.state.set({cluster: !<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'cluster'</span>)});
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-46">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-46">&#182;</a>
               </div>
               <p>Private: Helper function to select an option from a select list</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _selectOption: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id,value)</span></span>{
     <span class="hljs-keyword">var</span> options = <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'.'</span> + id + <span class="hljs-string">' &gt; select &gt; option'</span>);
     <span class="hljs-keyword">if</span> (options){
@@ -1322,9 +1322,9 @@ type selected.</p>
 });
 
 })(jQuery, recline.View);</pre></div></div>
-            
+
         </li>
-        
+
     </ul>
   </div>
 </body>

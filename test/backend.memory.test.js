@@ -112,7 +112,7 @@ test('filters', function () {
     equal(out.total, 3);
     deepEqual(_.pluck(out.hits, 'date'), ['2011-01-01','2011-02-03','2011-04-05']);
   });
-  
+
   query = new recline.Model.Query();
   query.addFilter({type: 'range', field: 'z', from: '0', to: '10'});
   data.query(query.toJSON()).then(function(out) {
@@ -181,7 +181,7 @@ test('facet', function () {
   ];
   deepEqual(out['country'].terms, exp);
 });
- 
+
 test('update and delete', function () {
   var data = _wrapData();
   // Test UPDATE
@@ -218,7 +218,7 @@ var memoryFields = [
 var memoryData = {
   metadata: {
     title: 'My Test Dataset'
-    , name: '1-my-test-dataset' 
+    , name: '1-my-test-dataset'
     , id: 'test-dataset'
   },
   fields: memoryFields,
@@ -327,7 +327,7 @@ test('filters', function () {
     equal(dataset.records.length, 3);
     deepEqual(dataset.records.pluck('date'), ['2011-01-01','2011-02-03','2011-04-05']);
   });
-  
+
   dataset = makeBackendDataset();
   dataset.queryState.addFilter({type: 'range', field: 'z', from: '0', to: '10'});
   dataset.query().then(function() {
@@ -358,7 +358,7 @@ test('facet', function () {
     deepEqual(dataset.facets.get('country').toJSON().terms, exp);
   });
 });
- 
+
 test('update and delete', function () {
   var dataset = makeBackendDataset();
   // convenience for tests - get the data that should get changed

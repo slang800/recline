@@ -17,7 +17,7 @@ on http://localhost:9200 with index twitter and type tweet it would be:</p>
 <ul>
 <li>headers - {dict of headers to add to each request}</li>
 <li>dataType: dataType for AJAx requests e.g. set to jsonp to make jsonp requests (default is json requests)</li>
-</ul>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">my</span><span class="p">.</span><span class="nx">Wrapper</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span> 
+</ul>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">my</span><span class="p">.</span><span class="nx">Wrapper</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">endpoint</span> <span class="o">=</span> <span class="nx">endpoint</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
@@ -239,4 +239,4 @@ var jqxhr = this._makeRequest({
 
 <span class="p">}(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">recline</span><span class="p">.</span><span class="nx">Backend</span><span class="p">.</span><span class="nx">ElasticSearch</span><span class="p">));</span>
 
-</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html>

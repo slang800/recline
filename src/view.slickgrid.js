@@ -26,10 +26,10 @@ this.recline.View = this.recline.View || {};
 //         state: {
 //          gridOptions: {
 //            editable: true,
-//            enableAddRow: true 
+//            enableAddRow: true
 //            // Enable support for row delete
 //            enabledDelRow: true,
-//            // Enable support for row Reorder 
+//            // Enable support for row Reorder
 //            enableReOrderRow:true,
 //            ...
 //          },
@@ -44,8 +44,8 @@ my.SlickGrid = Backbone.View.extend({
   initialize: function(modelEtc) {
     var self = this;
     this.$el.addClass('recline-slickgrid');
-  
-    // Template for row delete menu , change it if you don't love 
+
+    // Template for row delete menu , change it if you don't love
     this.templates = {
       "deleterow" : '<button href="#" class="recline-row-delete btn btn-default" title="Delete row">X</button>'
     };
@@ -68,12 +68,12 @@ my.SlickGrid = Backbone.View.extend({
     this._slickHandler = new Slick.EventHandler();
 
     //add menu for new row , check if enableAddRow is set to true or not set
-    if(this.state.get("gridOptions") 
-  && this.state.get("gridOptions").enabledAddRow != undefined 
+    if(this.state.get("gridOptions")
+  && this.state.get("gridOptions").enabledAddRow != undefined
       && this.state.get("gridOptions").enabledAddRow == true ){
       this.editor    =  new  my.GridControl()
       this.elSidebar =  this.editor.$el
-  this.listenTo(this.editor.state, 'change', function(){   
+  this.listenTo(this.editor.state, 'change', function(){
     this.model.records.add(new recline.Model.Record())
       });
     }
@@ -102,26 +102,26 @@ my.SlickGrid = Backbone.View.extend({
     }, self.state.get('gridOptions'));
 
     // We need all columns, even the hidden ones, to show on the column picker
-    var columns = []; 
+    var columns = [];
 
     // custom formatter as default one escapes html
     // plus this way we distinguish between rendering/formatting and computed value (so e.g. sort still works ...)
     // row = row index, cell = cell index, value = value, columnDef = column definition, dataContext = full row values
     var formatter = function(row, cell, value, columnDef, dataContext) {
       if(columnDef.id == "del"){
-        return self.templates.deleterow 
+        return self.templates.deleterow
       }
       var field = self.model.fields.get(columnDef.id);
       if (field.renderer) {
         return  field.renderer(value, field, dataContext);
       } else {
-        return  value 
+        return  value
       }
     };
 
-    // we need to be sure that user is entering a valid  input , for exemple if 
-    // field is date type and field.format ='YY-MM-DD', we should be sure that 
-    // user enter a correct value 
+    // we need to be sure that user is entering a valid  input , for exemple if
+    // field is date type and field.format ='YY-MM-DD', we should be sure that
+    // user enter a correct value
     var validator = function(field) {
       return function(value){
         if (field.type == "date" && isNaN(Date.parse(value))){
@@ -130,7 +130,7 @@ my.SlickGrid = Backbone.View.extend({
             msg: "A date is required, check field field-date-format"
           };
         } else {
-          return {valid: true, msg :null } 
+          return {valid: true, msg :null }
         }
       }
     };
@@ -207,7 +207,7 @@ my.SlickGrid = Backbone.View.extend({
         }
       }
       columns.push(column);
-    });    
+    });
     // Restrict the visible columns
     var visibleColumns = _.filter(columns, function(column) {
       return _.indexOf(self.state.get('hiddenColumns'), column.id) === -1;
@@ -284,7 +284,7 @@ my.SlickGrid = Backbone.View.extend({
     if (this.state.get("gridOptions") && this.state.get("gridOptions").enableReOrderRow) {
       this._setupRowReordering();
     }
-    
+
     this._slickHandler.subscribe(this.grid.onSort, function(e, args){
       var order = (args.sortAsc) ? 'asc':'desc';
       var sort = [{
@@ -293,11 +293,11 @@ my.SlickGrid = Backbone.View.extend({
       }];
       self.model.query({sort: sort});
     });
-    
+
     this._slickHandler.subscribe(this.grid.onColumnsReordered, function(e, args){
       self.state.set({columnsOrder: _.pluck(self.grid.getColumns(),'id')});
     });
-    
+
     this.grid.onColumnsResized.subscribe(function(e, args){
         var columns = args.grid.getColumns();
         var defaultColumnWidth = args.grid.getOptions().defaultColumnWidth;
@@ -309,7 +309,7 @@ my.SlickGrid = Backbone.View.extend({
         });
         self.state.set({columnsWidth:columnsWidth});
     });
-    
+
     this._slickHandler.subscribe(this.grid.onCellChange, function (e, args) {
       // We need to change the model associated value
       var grid = args.grid;
@@ -318,7 +318,7 @@ my.SlickGrid = Backbone.View.extend({
       var v = {};
       v[field] = args.item[field];
       model.set(v);
-    });  
+    });
     this._slickHandler.subscribe(this.grid.onClick,function(e, args){
       //try catch , because this fail in qunit , but no
       //error on browser.
@@ -329,8 +329,8 @@ my.SlickGrid = Backbone.View.extend({
       // else it is The the second cell (1) , because The 0 is now cell
       // that handle row Reoder.
       var cell =0
-      if(self.state.get("gridOptions") 
-  && self.state.get("gridOptions").enableReOrderRow != undefined 
+      if(self.state.get("gridOptions")
+  && self.state.get("gridOptions").enableReOrderRow != undefined
         && self.state.get("gridOptions").enableReOrderRow == true ){
         cell =1
       }
@@ -372,16 +372,16 @@ my.SlickGrid = Backbone.View.extend({
       }
       return true;
     });
-    
+
     moveRowsPlugin.onMoveRows.subscribe(function (e, args) {
       var extractedRows = [], left, right;
       var rows = args.rows;
       var insertBefore = args.insertBefore;
 
-      var data = self.model.records.toJSON()      
+      var data = self.model.records.toJSON()
       left = data.slice(0, insertBefore);
       right= data.slice(insertBefore, data.length);
-      
+
       rows.sort(function(a,b) { return a-b; });
 
       for (var i = 0; i < rows.length; i++) {
@@ -402,10 +402,10 @@ my.SlickGrid = Backbone.View.extend({
       data = left.concat(extractedRows.concat(right));
       var selectedRows = [];
       for (var i = 0; i < rows.length; i++)
-        selectedRows.push(left.length + i);      
+        selectedRows.push(left.length + i);
 
       self.model.records.reset(data)
-      
+
     });
     //register The plugin to handle row Reorder
     if(this.state.get("gridOptions") && this.state.get("gridOptions").enableReOrderRow) {
@@ -437,13 +437,13 @@ my.SlickGrid = Backbone.View.extend({
 });
 
 // Add new grid Control to display a new row add menu bouton
-// It display a simple side-bar menu ,for user to add new 
-// row to grid 
+// It display a simple side-bar menu ,for user to add new
+// row to grid
 my.GridControl= Backbone.View.extend({
   className: "recline-row-add",
   // Template for row edit menu , change it if you don't love
   template: '<h1><button href="#" class="recline-row-add btn btn-default">Add row</button></h1>',
-  
+
   initialize: function(options){
     var self = this;
     _.bindAll(this, 'render');

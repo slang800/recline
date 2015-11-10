@@ -12,4 +12,3 @@ timeline.convertRecord = function(record, fields) {
   return out;
 }
 timeline.render();
-

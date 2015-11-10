@@ -26,7 +26,7 @@ A Dataset is *the* central object in Recline. Standard usage is:
 
 {% highlight javascript %}
 var dataset = new recline.model.Dataset({
-  // general metadata e.g. 
+  // general metadata e.g.
   id: ...
   title: ...
   // information about data source e.g.
@@ -38,7 +38,7 @@ var dataset = new recline.model.Dataset({
 // initialize dataset with data from the backend.
 dataset.fetch();
 
-// we will now have the following (and more) set up - see below for details 
+// we will now have the following (and more) set up - see below for details
 dataset.fields // collection of Fields (columns) for this Dataset
 dataset.records // collection of Records resulting from latest query
 dataset.docCount // total number of Records in the last query
@@ -136,9 +136,9 @@ normalized to the default type name for that type):
         lon: ...
         lat: ...
       }
-      
+
       location: [lon,lat]
-      
+
       location: "lat, lng"
 
   As bonus there is also support for (beyond the ES style geo_point):
@@ -158,7 +158,7 @@ normalized to the default type name for that type):
 
 <div class="alert">NB: types are not validated so you can set the type to
 whatever value you like (it does not have to be in the above list). However,
-using types outside of the specified list may limit functionality.</div> 
+using types outside of the specified list may limit functionality.</div>
 
 [types-1]: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1
 [es-types]: http://www.elasticsearch.org/guide/reference/mapping/
@@ -174,7 +174,7 @@ myfield.renderer = myRenderFunction;
 {% endhighlight %}
 
 Your renderer function should have the following signature:
-  
+
     function(value, field, record)
 
 Where the arguments passed in are as follows:
@@ -197,7 +197,7 @@ Default renderers are provided - see the source for details, but a few examples
 are:
 
 * type = string
-  * no format provided: pass through but convert http:// to hyperlinks 
+  * no format provided: pass through but convert http:// to hyperlinks
   * format = plain: do no processing on the source text
   * format = markdown: process as markdown (if Showdown library available)
 * type = float
@@ -215,7 +215,7 @@ To use derived fields set a `deriver` function on the Field. This function will
 be used to derive/compute the value of data in this field as a function of this
 field's value (if any) and the current record. It's signature and behaviour is
 the same as for renderer.
- 
+
 
 <h2 id="query">Query</h2>
 

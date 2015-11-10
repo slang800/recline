@@ -7,7 +7,7 @@ this.recline.View = this.recline.View || {};
   "use strict";
 
 my.FilterEditor = Backbone.View.extend({
-  className: 'recline-filter-editor well', 
+  className: 'recline-filter-editor well',
   template: ' \
     <div class="filters"> \
       <h3>Filters</h3> \

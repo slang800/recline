@@ -7,4 +7,3 @@ dataset.fields.models[6] = new recline.Model.Field({
 });
 var rec = dataset.records.at(0);
 $el.append(record.summary());
-

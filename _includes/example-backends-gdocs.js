@@ -18,4 +18,3 @@ dataset.fetch().done(function(dataset) {
     console.log(dataset.records);
   }
 });
-

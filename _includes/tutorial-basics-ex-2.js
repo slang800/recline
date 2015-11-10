@@ -2,7 +2,7 @@
 var $el = $('.ex-2');
 
 // query with text 'UK' - this will attempt to match any field for UK
-// Also limit the query to return a maximum of 2 results using the size attribute 
+// Also limit the query to return a maximum of 2 results using the size attribute
 
 // query function has asynchronous behaviour and returns a promise object
 // (even for the case of in memory data where querying in fact happens synchronously)
@@ -16,4 +16,3 @@ dataset.query({q: 'UK', size: 2}).done(function() {
     )
   );
 });
-

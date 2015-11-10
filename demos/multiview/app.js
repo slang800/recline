@@ -77,7 +77,7 @@ var createMultiView = function(dataset, state) {
             enabledAddRow: true,
             // Enable support for row delete
             enabledDelRow: true,
-            // Enable support for row ReOrder 
+            // Enable support for row ReOrder
             enableReOrderRow:true,
             autoEdit: false,
             enableCellNavigation: true
@@ -114,4 +114,3 @@ var createMultiView = function(dataset, state) {
   });
   return multiView;
 }
-

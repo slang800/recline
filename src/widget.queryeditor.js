@@ -7,7 +7,7 @@ this.recline.View = this.recline.View || {};
   "use strict";
 
 my.QueryEditor = Backbone.View.extend({
-  className: 'recline-query-editor', 
+  className: 'recline-query-editor',
   template: ' \
     <form action="" method="GET" class="form-inline" role="form"> \
       <div class="form-group"> \

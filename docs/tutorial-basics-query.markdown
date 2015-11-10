@@ -37,7 +37,7 @@ restricted number of returned records using the size attribute.
 
 <div class="ex-2 well">&nbsp;</div>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 $('.ex-2').html('');
 {% include tutorial-basics-ex-2.js %}
 </script>

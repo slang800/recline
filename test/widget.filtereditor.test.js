@@ -103,7 +103,7 @@ test('geo_distance', function () {
   // now check we have new filter
   $editForm = view.$el.find('form.js-edit');
   equal($editForm.find('.filter-geo_distance').length, 1)
-  deepEqual(_.sortBy(_.keys(dataset.queryState.attributes.filters[0]),_.identity), 
+  deepEqual(_.sortBy(_.keys(dataset.queryState.attributes.filters[0]),_.identity),
             ["distance", "field", "point", "type", "unit"]);
 
   // now set filter value and apply

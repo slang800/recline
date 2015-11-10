@@ -21,7 +21,7 @@ test('Field: basics', function () {
     },
     'should throw an error if not passed in a hash with id'
   );
-  
+
   // toJSON
   var field = new recline.Model.Field({
     id: 'x',
@@ -50,7 +50,7 @@ test('Field: type mapping', function () {
     { input: 'timestamp', exp: 'date-time'},
     { input: 'json', exp: 'object'}
   ];
-  
+
   _.each(tests, function(data) {
     var field = new recline.Model.Field({
       id: 'x',
@@ -69,7 +69,7 @@ test('Field: getFieldValue', function () {
   var exp = 12.3;
   equal(out, exp);
 
-  // bad value 
+  // bad value
   var out = doc.getFieldValue();
   equal(out, '');
 });

@@ -3,7 +3,7 @@
 // ReclineJS.com is always appreciated)!
 
 
-// ## Our main loop - on document ready 
+// ## Our main loop - on document ready
 jQuery(function($) {
   var $el = $('.search-here');
 
@@ -13,7 +13,7 @@ jQuery(function($) {
   // this demo with different backends
   //
   // There are 2 alternatives: more complex and a simpler one
-  // 
+  //
   // If you just want to see how this work skip to the simple case ...
 
   // ### 1. More complex - use data from a backend configured in query string
@@ -36,7 +36,7 @@ jQuery(function($) {
   });
 
   // #### Custom template
-  // 
+  //
   // Create a custom template for rendering the records
   var template = ' \
     <div class="record"> \
@@ -52,7 +52,7 @@ jQuery(function($) {
   var searchView = new SearchView({
     el: $el,
     model: dataset,
-    template: template 
+    template: template
   });
   searchView.render();
 
@@ -78,7 +78,7 @@ jQuery(function($) {
 // object
 //
 // It also provides simple support for customization e.g. of template for list of results
-// 
+//
 //      var view = new SearchView({
 //        el: $('some-element'),
 //        model: dataset
@@ -111,7 +111,7 @@ var SearchView = Backbone.View.extend({
     </div> \
     <div class="pager-here"></div> \
   ',
- 
+
   // render the view
   render: function() {
     var results = '';
@@ -119,7 +119,7 @@ var SearchView = Backbone.View.extend({
       var results = _.map(this.model.records.toJSON(), this.templateResults).join('\n');
     } else {
       // templateResults is just for one result ...
-      var tmpl = '{{#records}}' + this.templateResults + '{{/records}}'; 
+      var tmpl = '{{#records}}' + this.templateResults + '{{/records}}';
       var results = Mustache.render(tmpl, {
         records: this.model.records.toJSON()
       });
@@ -133,7 +133,7 @@ var SearchView = Backbone.View.extend({
     this.el.find('.total span').text(this.model.recordCount);
 
     // ### Now setup all the extra mini-widgets
-    // 
+    //
     // Facets, Pager, QueryEditor etc
 
     var view = new recline.View.FacetViewer({
@@ -161,7 +161,7 @@ var SearchView = Backbone.View.extend({
 
 
 // ### Handle case where we get data from a specific backend
-// 
+//
 // Includes providing custom templates
 function setupMoreComplexExample(config) {
   var $el = $('.search-here');
@@ -172,7 +172,7 @@ function setupMoreComplexExample(config) {
     var searchView = new SearchView({
       el: $el,
       model: dataset,
-      template: template 
+      template: template
     });
     searchView.render();
 

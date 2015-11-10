@@ -9,7 +9,7 @@ this.recline.View = this.recline.View || {};
 // ## MultiView
 //
 // Manage multiple views together along with query editor etc. Usage:
-// 
+//
 // <pre>
 // var myExplorer = new recline.View.MultiView({
 //   model: {{recline.Model.Dataset instance}}
@@ -17,10 +17,10 @@ this.recline.View = this.recline.View || {};
 //   views: {{dataset views}}
 //   state: {{state configuration -- see below}}
 // });
-// </pre> 
+// </pre>
 //
 // ### Parameters
-// 
+//
 // **model**: (required) recline.model.Dataset instance.
 //
 // **el**: (required) DOM element to bind to. NB: the element already
@@ -53,7 +53,7 @@ this.recline.View = this.recline.View || {};
 //
 // **sidebarViews**: (optional) the sidebar views (Filters, Fields) for
 // MultiView to show. This is an array of view hashes. If not provided
-// initialize with (recline.View.)FilterEditor and Fields views (with obvious 
+// initialize with (recline.View.)FilterEditor and Fields views (with obvious
 // id and labels!).
 //
 // <pre>
@@ -91,7 +91,7 @@ this.recline.View = this.recline.View || {};
 // </pre>
 //
 // Note that at present we do *not* serialize information about the actual set
-// of views in use -- e.g. those specified by the views argument -- but instead 
+// of views in use -- e.g. those specified by the views argument -- but instead
 // expect either that the default views are fine or that the client to have
 // initialized the MultiView with the relevant views themselves.
 my.MultiView = Backbone.View.extend({
@@ -351,7 +351,7 @@ my.MultiView = Backbone.View.extend({
   },
 
   // create a state object for this view and do the job of
-  // 
+  //
   // a) initializing it from both data passed in and other sources (e.g. hash url)
   //
   // b) ensure the state object is updated in responese to changes in subviews, query etc.

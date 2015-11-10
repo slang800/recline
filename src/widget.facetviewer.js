@@ -8,7 +8,7 @@ this.recline.View = this.recline.View || {};
 
 // ## FacetViewer
 //
-// Widget for displaying facets 
+// Widget for displaying facets
 //
 // Usage:
 //
@@ -16,7 +16,7 @@ this.recline.View = this.recline.View || {};
 //        model: dataset
 //      });
 my.FacetViewer = Backbone.View.extend({
-  className: 'recline-facet-viewer', 
+  className: 'recline-facet-viewer',
   template: ' \
     <div class="facets"> \
       {{#facets}} \

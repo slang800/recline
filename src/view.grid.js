@@ -22,7 +22,7 @@ my.Grid = Backbone.View.extend({
     var state = _.extend({
         hiddenFields: []
       }, modelEtc.state
-    ); 
+    );
     this.state = new recline.Model.ObjectState(state);
   },
 
@@ -39,7 +39,7 @@ my.Grid = Backbone.View.extend({
     sort[0][this.tempState.currentColumn] = {order: order};
     this.model.query({sort: sort});
   },
-  
+
   hideColumn: function() {
     var hiddenFields = this.state.get('hiddenFields');
     hiddenFields.push(this.tempState.currentColumn);
@@ -48,7 +48,7 @@ my.Grid = Backbone.View.extend({
     this.state.trigger('change');
     this.render();
   },
-  
+
   showColumn: function(e) {
     var hiddenFields = _.without(this.state.get('hiddenFields'), $(e.target).data('column'));
     this.state.set({hiddenFields: hiddenFields});
@@ -81,7 +81,7 @@ my.Grid = Backbone.View.extend({
   ',
 
   toTemplateJSON: function() {
-    var self = this; 
+    var self = this;
     var modelData = this.model.toJSON();
     modelData.notEmpty = ( this.fields.length > 0 );
     // TODO: move this sort of thing into a toTemplateJSON method on Dataset?
@@ -103,7 +103,7 @@ my.Grid = Backbone.View.extend({
     // compute field widths (-20 for first menu col + 10px for padding on each col and finally 16px for the scrollbar)
     var fullWidth = self.$el.width() - 20 - 10 * numFields - this.scrollbarDimensions.width;
     var width = parseInt(Math.max(50, fullWidth / numFields), 10);
-    // if columns extend outside viewport then remainder is 0 
+    // if columns extend outside viewport then remainder is 0
     var remainder = Math.max(fullWidth - numFields * width,0);
     this.fields.each(function(field, idx) {
       // add the remainder to the first field width so we make up full col
@@ -136,7 +136,7 @@ my.Grid = Backbone.View.extend({
   },
 
   // ### _scrollbarSize
-  // 
+  //
   // Measure width of a vertical scrollbar and height of a horizontal scrollbar.
   //
   // @return: { width: pixelWidth, height: pixelHeight }
@@ -185,7 +185,7 @@ my.GridRow = Backbone.View.extend({
     'click .data-table-cell-editor .okButton': 'onEditorOK',
     'click .data-table-cell-editor .cancelButton': 'onEditorCancel'
   },
-  
+
   toTemplateJSON: function() {
     var self = this;
     var doc = this.model;

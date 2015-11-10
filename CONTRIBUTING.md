@@ -40,4 +40,3 @@ or if you're actively developing and want auto-reloading:
     jekyll serve --watch
 
 [jekyll]: https://github.com/mojombo/jekyll
-

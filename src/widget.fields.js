@@ -21,9 +21,9 @@ this.recline.View = this.recline.View || {};
 
 (function($, my) {
   "use strict";
-  
+
 my.Fields = Backbone.View.extend({
-  className: 'recline-fields-view', 
+  className: 'recline-fields-view',
   template: ' \
     <div class="panel-group fields-list well"> \
     <h3>Fields <a href="#" class="js-show-hide">+</a></h3> \

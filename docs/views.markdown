@@ -6,7 +6,7 @@ root: ../
 
 <div class="page-header">
   <h1>
-    Recline Views
+   Recline Views
   </h1>
 </div>
 
@@ -36,36 +36,36 @@ Views provided by core Recline are crudely divided into two types:
 These views are just Backbone views with a few additional conventions:
 
 1. The model passed to the View should always be a recline.Model.Dataset
-   instance
+  instance
 2. Views should generate their own root element rather than having it passed
-   in.
+  in.
 3. Views should apply a css class named 'recline-{view-name-lower-cased} to the
-   root element (and for all CSS for this view to be qualified using this CSS
-   class)
+  root element (and for all CSS for this view to be qualified using this CSS
+  class)
 4. Read-only mode: CSS for this view should respect/utilize a parent
-   recline-read-only class in order to trigger read-only behaviour (this class
-   will usually be set on some parent element of the view's root element).
+  recline-read-only class in order to trigger read-only behaviour (this class
+  will usually be set on some parent element of the view's root element).
 5. State: state (configuration) information for the view should be stored on an
-   attribute named state that is an instance of a Backbone Model (or, more
-   speficially, be an instance of `recline.Model.ObjectState`). In addition, a
-   state attribute may be specified in the Hash passed to a View on
-   iniitialization and this information should be used to set the initial state
-   of the view.
+  attribute named state that is an instance of a Backbone Model (or, more
+  speficially, be an instance of `recline.Model.ObjectState`). In addition, a
+  state attribute may be specified in the Hash passed to a View on
+  iniitialization and this information should be used to set the initial state
+  of the view.
 
-   Example of state would be the set of fields being plotted in a graph view.
+  Example of state would be the set of fields being plotted in a graph view.
 
-   More information about State can be found below.
+  More information about State can be found below.
 
 To summarize some of this, the initialize function for a Dataset View should
 look like:
 
 <pre>
-   initialize: {
-       model: {a recline.Model.Dataset instance}
-       // el: {do not specify - instead view should create}
-       state: {(optional) Object / Hash specifying initial state}
-       ...
-   }
+  initialize: {
+     model: {a recline.Model.Dataset instance}
+     // el: {do not specify - instead view should create}
+     state: {(optional) Object / Hash specifying initial state}
+     ...
+  }
 </pre>
 
 Note: Dataset Views in core Recline have a common layout on disk as follows,

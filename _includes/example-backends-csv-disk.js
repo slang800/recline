@@ -19,4 +19,3 @@ $($file).change(function(e) {
   });
   $('#my-csv-disk').append(grid.el);
 });
-

@@ -109,4 +109,3 @@ Here is an example of the page setup for an app using every Recline component:
 
 {% include recline-deps.html %}
 {% endhighlight %}
-

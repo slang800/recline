@@ -69,7 +69,7 @@ this.recline.Backend.Memory = this.recline.Backend.Memory || {};
       var numRows = queryObj.size || this.records.length;
       var start = queryObj.from || 0;
       var results = this.records;
-      
+
       results = this._applyFilters(results, queryObj);
       results = this._applyFreeTextQuery(results, queryObj);
 
@@ -183,7 +183,7 @@ this.recline.Backend.Memory = this.recline.Backend.Memory || {};
             var foundmatch = false;
             _.each(self.fields, function(field) {
               var value = rawdoc[field.id];
-              if ((value !== null) && (value !== undefined)) { 
+              if ((value !== null) && (value !== undefined)) {
                 value = value.toString();
               } else {
                 // value can be null (apparently in some cases)

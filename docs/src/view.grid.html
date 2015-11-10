@@ -10,7 +10,7 @@
 <body>
   <div id="container">
     <div id="background"></div>
-    
+
       <ul id="jump_to">
         <li>
           <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
@@ -18,116 +18,116 @@
           <div id="jump_wrapper">
           <div id="jump_page_wrapper">
             <div id="jump_page">
-              
-                
+
+
                 <a class="source" href="backend.dataproxy.html">
                   backend.dataproxy.js
                 </a>
-              
-                
+
+
                 <a class="source" href="backend.memory.html">
                   backend.memory.js
                 </a>
-              
-                
+
+
                 <a class="source" href="ecma-fixes.html">
                   ecma-fixes.js
                 </a>
-              
-                
+
+
                 <a class="source" href="model.html">
                   model.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.flot.html">
                   view.flot.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.graph.html">
                   view.graph.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.grid.html">
                   view.grid.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.map.html">
                   view.map.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.multiview.html">
                   view.multiview.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.slickgrid.html">
                   view.slickgrid.js
                 </a>
-              
-                
+
+
                 <a class="source" href="view.timeline.html">
                   view.timeline.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.facetviewer.html">
                   widget.facetviewer.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.fields.html">
                   widget.fields.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.filtereditor.html">
                   widget.filtereditor.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.pager.html">
                   widget.pager.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.queryeditor.html">
                   widget.queryeditor.js
                 </a>
-              
-                
+
+
                 <a class="source" href="widget.valuefilter.html">
                   widget.valuefilter.js
                 </a>
-              
+
             </div>
           </div>
         </li>
       </ul>
-    
+
     <ul class="sections">
-        
+
           <li id="title">
               <div class="annotation">
                   <h1>view.grid.js</h1>
               </div>
           </li>
-        
-        
-        
+
+
+
         <li id="section-1">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+
             </div>
-            
+
             <div class="content"><div class='highlight'><pre><span class="hljs-comment">/*jshint multistr:true */</span>
 
 <span class="hljs-keyword">this</span>.recline = <span class="hljs-keyword">this</span>.recline || {};
@@ -135,13 +135,13 @@
 
 (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($, my)</span> </span>{
 <span class="hljs-pi">  "use strict"</span>;</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-2">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
@@ -150,7 +150,7 @@
 <p>Initialize it with a <code>recline.Model.Dataset</code>.</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>my.Grid = Backbone.View.extend({
   tagName:  <span class="hljs-string">"div"</span>,
   className: <span class="hljs-string">"recline-grid-container"</span>,
@@ -163,18 +163,18 @@
     <span class="hljs-keyword">var</span> state = _.extend({
         hiddenFields: []
       }, modelEtc.state
-    ); 
+    );
     <span class="hljs-keyword">this</span>.state = <span class="hljs-keyword">new</span> recline.Model.ObjectState(state);
   },
 
   events: {</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-3">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
@@ -182,64 +182,64 @@
 ‘scroll .recline-grid tbody’: ‘onHorizontalScroll’</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-4">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>======================================================</p>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-5">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>Column and row menus</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>
   setColumnSort: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(order)</span> </span>{
     <span class="hljs-keyword">var</span> sort = [{}];
     sort[<span class="hljs-number">0</span>][<span class="hljs-keyword">this</span>.tempState.currentColumn] = {order: order};
     <span class="hljs-keyword">this</span>.model.query({sort: sort});
   },
-  
+
   hideColumn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">var</span> hiddenFields = <span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'hiddenFields'</span>);
     hiddenFields.push(<span class="hljs-keyword">this</span>.tempState.currentColumn);
     <span class="hljs-keyword">this</span>.state.set({hiddenFields: hiddenFields});</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-6">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>change event not being triggered (because it is an array?) so trigger manually</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.state.trigger(<span class="hljs-string">'change'</span>);
     <span class="hljs-keyword">this</span>.render();
   },
-  
+
   showColumn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
     <span class="hljs-keyword">var</span> hiddenFields = _.without(<span class="hljs-keyword">this</span>.state.get(<span class="hljs-string">'hiddenFields'</span>), $(e.target).data(<span class="hljs-string">'column'</span>));
     <span class="hljs-keyword">this</span>.state.set({hiddenFields: hiddenFields});
@@ -250,33 +250,33 @@
     <span class="hljs-keyword">var</span> currentScroll = $(e.target).scrollLeft();
     <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'.recline-grid thead tr'</span>).scrollLeft(currentScroll);
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-7">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
               <p>======================================================</p>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-8">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
               <h4 id="templating">Templating</h4>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  template: <span class="hljs-string">' \
     &lt;div class="table-container"&gt; \
     &lt;table class="recline-grid table-striped table-condensed" cellspacing="0"&gt; \
@@ -296,40 +296,40 @@
   '</span>,
 
   toTemplateJSON: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>; 
+    <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">var</span> modelData = <span class="hljs-keyword">this</span>.model.toJSON();
     modelData.notEmpty = ( <span class="hljs-keyword">this</span>.fields.length &gt; <span class="hljs-number">0</span> );</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-9">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
               <p>TODO: move this sort of thing into a toTemplateJSON method on Dataset?</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    modelData.fields = <span class="hljs-keyword">this</span>.fields.map(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(field)</span> </span>{
       <span class="hljs-keyword">return</span> field.toJSON();
     });</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-10">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-10">&#182;</a>
               </div>
               <p>last header width = scroll bar - border (2px) */</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    modelData.lastHeaderWidth = <span class="hljs-keyword">this</span>.scrollbarDimensions.width - <span class="hljs-number">2</span>;
     <span class="hljs-keyword">return</span> modelData;
   },
@@ -341,52 +341,52 @@
 
     <span class="hljs-keyword">this</span>.scrollbarDimensions = <span class="hljs-keyword">this</span>.scrollbarDimensions || <span class="hljs-keyword">this</span>._scrollbarSize(); <span class="hljs-comment">// skip measurement if already have dimensions</span>
     <span class="hljs-keyword">var</span> numFields = <span class="hljs-keyword">this</span>.fields.length;</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-11">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-11">&#182;</a>
               </div>
               <p>compute field widths (-20 for first menu col + 10px for padding on each col and finally 16px for the scrollbar)</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> fullWidth = self.$el.width() - <span class="hljs-number">20</span> - <span class="hljs-number">10</span> * numFields - <span class="hljs-keyword">this</span>.scrollbarDimensions.width;
     <span class="hljs-keyword">var</span> width = <span class="hljs-built_in">parseInt</span>(<span class="hljs-built_in">Math</span>.max(<span class="hljs-number">50</span>, fullWidth / numFields), <span class="hljs-number">10</span>);</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-12">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-12">&#182;</a>
               </div>
               <p>if columns extend outside viewport then remainder is 0 </p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> remainder = <span class="hljs-built_in">Math</span>.max(fullWidth - numFields * width,<span class="hljs-number">0</span>);
     <span class="hljs-keyword">this</span>.fields.each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(field, idx)</span> </span>{</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-13">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <p>add the remainder to the first field width so we make up full col</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">if</span> (idx === <span class="hljs-number">0</span>) {
         field.set({width: width+remainder});
       } <span class="hljs-keyword">else</span> {
@@ -405,20 +405,20 @@
         });
       newView.render();
     });</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-14">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <p>hide extra header col if no scrollbar to avoid unsightly overhang</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> $tbody = <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'tbody'</span>)[<span class="hljs-number">0</span>];
     <span class="hljs-keyword">if</span> ($tbody.scrollHeight &lt;= $tbody.offsetHeight) {
       <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'th.last-header'</span>).hide();
@@ -427,13 +427,13 @@
     <span class="hljs-keyword">this</span>.$el.find(<span class="hljs-string">'.recline-grid tbody'</span>).scroll(<span class="hljs-keyword">this</span>.onHorizontalScroll);
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-15">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
@@ -442,7 +442,7 @@
 <p>@return: { width: pixelWidth, height: pixelHeight }</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>  _scrollbarSize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">var</span> $c = $(<span class="hljs-string">"&lt;div style='position:absolute; top:-10000px; left:-10000px; width:100px; height:100px; overflow:scroll;'&gt;&lt;/div&gt;"</span>).appendTo(<span class="hljs-string">"body"</span>);
     <span class="hljs-keyword">var</span> dim = { width: $c.width() - $c[<span class="hljs-number">0</span>].clientWidth + <span class="hljs-number">1</span>, height: $c.height() - $c[<span class="hljs-number">0</span>].clientHeight };
@@ -450,13 +450,13 @@
     <span class="hljs-keyword">return</span> dim;
   }
 });</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-16">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
@@ -473,7 +473,7 @@ var row = new GridRow({
 </pre>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>my.GridRow = Backbone.View.extend({
   initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(initData)</span> </span>{
     _.bindAll(<span class="hljs-keyword">this</span>, <span class="hljs-string">'render'</span>);
@@ -496,7 +496,7 @@ var row = new GridRow({
     <span class="hljs-string">'click .data-table-cell-editor .okButton'</span>: <span class="hljs-string">'onEditorOK'</span>,
     <span class="hljs-string">'click .data-table-cell-editor .cancelButton'</span>: <span class="hljs-string">'onEditorCancel'</span>
   },
-  
+
   toTemplateJSON: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
     <span class="hljs-keyword">var</span> doc = <span class="hljs-keyword">this</span>.model;
@@ -516,33 +516,33 @@ var row = new GridRow({
     <span class="hljs-keyword">this</span>.$el.html(html);
     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
   },</pre></div></div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-17">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
               <p>===================</p>
 
             </div>
-            
+
         </li>
-        
-        
+
+
         <li id="section-18">
             <div class="annotation">
-              
+
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
               <p>Cell Editor methods</p>
 
             </div>
-            
+
             <div class="content"><div class='highlight'><pre>
   cellEditorTemplate: <span class="hljs-string">' \
     &lt;div class="menu-container data-table-cell-editor"&gt; \
@@ -597,9 +597,9 @@ var row = new GridRow({
 });
 
 })(jQuery, recline.View);</pre></div></div>
-            
+
         </li>
-        
+
     </ul>
   </div>
 </body>

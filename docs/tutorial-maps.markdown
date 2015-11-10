@@ -120,7 +120,7 @@ certain number of markers. Here's an example:
     // var map is recline.View.Map instance
     // marker cluster threshold
     var threshold = 65;
-      
+
     // enable clustering if there is a large number of markers
     var countAfter = 0;
     map.features.eachLayer(function(){countAfter++;});

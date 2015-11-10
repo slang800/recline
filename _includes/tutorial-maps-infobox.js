@@ -11,4 +11,3 @@ view.infobox = function(record) {
   return html;
 }
 view.render();
-

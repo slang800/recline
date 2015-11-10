@@ -4,63 +4,63 @@ module("Backend DataProxy");
 var dataProxyData = {
   "data": [
     [
-    "1", 
-  "1950-01", 
+    "1",
+  "1950-01",
   "34.73"
-    ], 
+    ],
   [
-    "2", 
-  "1950-02", 
+    "2",
+  "1950-02",
   "34.73"
-    ], 
+    ],
   [
-    "3", 
-  "1950-03", 
+    "3",
+  "1950-03",
   "34.73"
-    ], 
+    ],
   [
-    "4", 
-  "1950-04", 
+    "4",
+  "1950-04",
   "34.73"
-    ], 
+    ],
   [
-    "5", 
-  "1950-05", 
+    "5",
+  "1950-05",
   "34.73"
-    ], 
+    ],
   [
-    "6", 
-  "1950-06", 
+    "6",
+  "1950-06",
   "34.73"
-    ], 
+    ],
   [
-    "7", 
-  "1950-07", 
+    "7",
+  "1950-07",
   "34.73"
-    ], 
+    ],
   [
-    "8", 
-  "1950-08", 
+    "8",
+  "1950-08",
   "34.73"
-    ], 
+    ],
   [
-    "9", 
-  "1950-09", 
+    "9",
+  "1950-09",
   "34.73"
-    ], 
+    ],
   [
-    "10", 
-  "1950-10", 
+    "10",
+  "1950-10",
   "34.73"
     ]
-    ], 
+    ],
   "fields": [
-    "__id__", 
-  "date", 
+    "__id__",
+  "date",
   "price"
-    ], 
-  "length": null, 
-  "max_results": 10, 
+    ],
+  "length": null,
+  "max_results": 10,
   "url": "http://webstore.thedatahub.org/rufuspollock/gold_prices/data.csv"
 };
 
@@ -83,7 +83,7 @@ test('DataProxy Backend', function() {
         done: function(callback) {
           callback(dataProxyData);
           return this;
-        }, 
+        },
         fail: function() {
           return this;
         }

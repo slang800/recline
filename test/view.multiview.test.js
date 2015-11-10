@@ -104,4 +104,3 @@ test('restore (from serialized state)', function() {
 });
 
 })(this.jQuery);
-

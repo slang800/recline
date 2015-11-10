@@ -43,7 +43,7 @@ to create Datasets from a variety of online sources and local sources including
 Google Spreadsheets, CSV files, etc. See the <a
 href="tutorial-backends.html">Backend tutorial</a> for more.</div>
 
-We can now create a recline Dataset object from this raw data: 
+We can now create a recline Dataset object from this raw data:
 
 {% highlight javascript %}
 var dataset = new recline.Model.Dataset({
@@ -72,7 +72,7 @@ Here's the output:
 
 <div class="ex-1 well">&nbsp;</div>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 $('.ex-1').html('');
 {% include tutorial-basics-ex-1.js %}
 </script>
@@ -126,7 +126,7 @@ Running this results in the following:
 
 <div class="ex-fields well">&nbsp;</div>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 $('.ex-fields').html('');
 {% include tutorial-basics-ex-fields.js %}
 </script>
@@ -143,7 +143,7 @@ Let's change the geo field to have type geo\_point and see what affect that has 
 
 <div class="ex-fields-2 well">&nbsp;</div>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 $('.ex-fields-2').html('');
 {% include tutorial-basics-ex-fields-2.js %}
 </script>

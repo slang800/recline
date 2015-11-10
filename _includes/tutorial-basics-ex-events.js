@@ -10,4 +10,3 @@ dataset.query({q: 'UK'});
 dataset.query({q: 'US'});
 
 dataset.unbind('reset', onChange);
-

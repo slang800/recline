@@ -8,10 +8,10 @@ this.recline.Backend.DataProxy = this.recline.Backend.DataProxy || {};
   // URL for the dataproxy
   my.dataproxy_url = '//jsonpdataproxy.appspot.com';
   // Timeout for dataproxy (after this time if no response we error)
-  // Needed because use JSONP so do not receive e.g. 500 errors 
+  // Needed because use JSONP so do not receive e.g. 500 errors
   my.timeout = 5000;
 
-  
+
   // use either jQuery or Underscore Deferred depending on what is available
   var Deferred = (typeof jQuery !== "undefined" && jQuery.Deferred) || _.Deferred;
 
@@ -50,7 +50,7 @@ this.recline.Backend.DataProxy = this.recline.Backend.DataProxy || {};
   };
 
   // ## _wrapInTimeout
-  // 
+  //
   // Convenience method providing a crude way to catch backend errors on JSONP calls.
   // Many of backends use JSONP and so will not get error messages and this is
   // a crude way to catch those errors.

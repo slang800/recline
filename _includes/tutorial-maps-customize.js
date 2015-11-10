@@ -14,4 +14,3 @@ view.geoJsonLayerOptions.pointToLayer = function(feature, latlng) {
   return marker;
 }
 view.render();
-

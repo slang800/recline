@@ -18,4 +18,3 @@ var grid = new recline.View.SlickGrid({
   el:  $('#my-online-csv')
 });
 grid.visible = true;
-

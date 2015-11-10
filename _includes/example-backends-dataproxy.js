@@ -14,4 +14,3 @@ var grid = new recline.View.Grid({
   model: dataset
 });
 $('#my-dataproxy').append(grid.el);
-

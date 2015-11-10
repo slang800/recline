@@ -60,9 +60,9 @@ test('change inputs', function () {
   // UI is 1-based but model is zero-based
   equal(dataset.queryState.get('from'), fromVal-1);
   equal($(toSelector).val(), fromVal+(size-1));
-  
+
   // change to: update from, change size
-  var toVal = dataset.recordCount; 
+  var toVal = dataset.recordCount;
   $(toSelector).val(toVal).change();
   equal($(toSelector).val(), toVal);
   equal($(fromSelector).val(), fromVal);

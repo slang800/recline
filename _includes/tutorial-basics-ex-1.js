@@ -26,4 +26,3 @@ var simple = record.toJSON();
 
 $el.append('<h4>Record as simple object</h4>');
 $el.append('<pre>' + JSON.stringify(simple, null, 2) + '</pre>');
-
